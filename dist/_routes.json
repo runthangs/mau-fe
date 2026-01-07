@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "include": [
+    "/*"
+  ],
+  "exclude": [
+    "/_astro/*",
+    "/images/logo/logo.mp4",
+    "/images/logo/mau-icon-green.svg",
+    "/images/logo/mau-logo-horizontal.svg",
+    "/images/logo/mau-logo-white-stacked.svg",
+    "/images/renderings/mau-rendering-cam-03.jpg",
+    "/images/renderings/mau-rendering-cam-04.jpg",
+    "/images/renderings/mau-rendering-cam-06.jpg",
+    "/images/renderings/mau-rendering-hero.jpg"
+  ]
+}

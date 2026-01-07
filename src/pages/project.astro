@@ -1,0 +1,89 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Manual list based on known files
+const renderings = [
+  { src: '/images/renderings/mau-rendering-cam-01.jpg', alt: 'Exterior Front View' },
+  { src: '/images/renderings/mau-rendering-cam-02.jpg', alt: 'Exterior Side View' },
+  { src: '/images/renderings/mau-rendering-cam-03.jpg', alt: 'Community Hall' },
+  { src: '/images/renderings/mau-rendering-cam-04.jpg', alt: 'Prayer Hall' },
+  { src: '/images/renderings/mau-rendering-cam-05.jpg', alt: 'Entrance Foyer' },
+  { src: '/images/renderings/mau-rendering-cam-06.jpg', alt: 'Library & Study Area' },
+];
+---
+
+<Layout title="The Project">
+  <div class="bg-dark text-white py-20">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-5xl font-bold mb-6 text-white">The New Masjid Al Ummah</h1>
+      <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+        A landmark project for Watford. Designed to be a sustainable, inclusive, and inspiring space for generations to come.
+      </p>
+    </div>
+  </div>
+
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto mb-16">
+        <h2 class="text-3xl font-bold text-dark mb-6">Vision & Design</h2>
+        <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+          The new Masjid Al Ummah is more than just a building; it's a statement of our commitment to the future. The architectural design blends modern British aesthetics with subtle Islamic geometry, creating a building that is both distinctively Muslim and harmoniously local.
+        </p>
+        <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+          Key features include:
+        </p>
+        <ul class="list-disc list-inside space-y-2 text-gray-600 mb-8 ml-4">
+          <li>dedicated youth center and creative studio</li>
+          <li>Multi-purpose community hall for events and sports</li>
+          <li>Eco-friendly construction with solar energy and rain harvesting</li>
+          <li>Open library and co-working spaces for students and professionals</li>
+          <li>Fully accessible facilities for the elderly and disabled</li>
+        </ul>
+      </div>
+
+      <!-- Gallery Grid -->
+      <h2 class="text-3xl font-bold text-dark mb-10 text-center">Project Renderings</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {renderings.map((img) => (
+          <div class="group relative overflow-hidden rounded-xl shadow-lg aspect-[4/3] cursor-pointer">
+            <img
+              src={img.src}
+              alt={img.alt}
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+              <span class="text-white font-medium text-lg">{img.alt}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline / Progress (Optional placeholder) -->
+  <section class="py-16 bg-secondary">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold text-dark mb-12">Project Timeline</h2>
+      <div class="max-w-3xl mx-auto border-l-4 border-primary pl-8 text-left space-y-12">
+        <div class="relative">
+          <div class="absolute -left-[41px] w-6 h-6 rounded-full bg-primary border-4 border-white"></div>
+          <span class="text-sm font-bold text-primary uppercase tracking-widest">Phase 1 - Completed</span>
+          <h3 class="text-xl font-bold text-dark mt-2">Land Acquisition & Planning</h3>
+          <p class="text-gray-600 mt-2">The site was secured and planning permission was granted by the local council.</p>
+        </div>
+        <div class="relative">
+          <div class="absolute -left-[41px] w-6 h-6 rounded-full bg-white border-4 border-primary"></div>
+          <span class="text-sm font-bold text-dark uppercase tracking-widest">Phase 2 - Current</span>
+          <h3 class="text-xl font-bold text-dark mt-2">Fundraising & Groundbreaking</h3>
+          <p class="text-gray-600 mt-2">We are currently raising funds for the main construction contract. Groundbreaking is expected in late 2025.</p>
+        </div>
+        <div class="relative opacity-60">
+          <div class="absolute -left-[41px] w-6 h-6 rounded-full bg-gray-300 border-4 border-white"></div>
+          <span class="text-sm font-bold text-gray-500 uppercase tracking-widest">Phase 3 - Future</span>
+          <h3 class="text-xl font-bold text-gray-700 mt-2">Construction & Completion</h3>
+          <p class="text-gray-500 mt-2">Main build, interior fit-out, and official opening of the new center.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

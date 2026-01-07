@@ -1,0 +1,8 @@
+{
+  "name": "mau-fe",
+  "compatibility_date": "2025-01-07",
+  "pages_build_output_dir": "dist",
+  "observability": {
+    "enabled": true
+  }
+}

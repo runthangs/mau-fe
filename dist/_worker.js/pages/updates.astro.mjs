@@ -1,0 +1,68 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+/* empty css                                   */
+import { e as createComponent, k as renderComponent, r as renderTemplate, m as maybeRenderHead, h as addAttribute } from '../chunks/astro/server_Cq3kh8DP.mjs';
+import { $ as $$Layout } from '../chunks/Layout_BkFr4NDu.mjs';
+export { r as renderers } from '../chunks/_@astro-renderers_VE_s814c.mjs';
+
+const $$Updates = createComponent(($$result, $$props, $$slots) => {
+  const newsletters = [
+    {
+      title: "March 2025 Newsletter",
+      date: "March 2025",
+      description: "The latest from Masjid Al Ummah - building progress updates, community events, and upcoming programs.",
+      pdfUrl: "https://storage.googleapis.com/wp-static/wp_mau_pillar/2025/07/64ce424c-mau-newsletter-march-2025.pdf",
+      coverColor: "from-primary to-accent"
+    }
+  ];
+  const updates = [
+    {
+      title: "Building Fund Reaches \xA3520K",
+      date: "January 2025",
+      category: "Fundraising",
+      categoryColor: "bg-primary",
+      description: "Alhamdulillah, we have now raised 13% of our \xA34M target. Thank you to all our generous donors for your continued support.",
+      image: "/images/renderings/mau-rendering-hero.jpg"
+    },
+    {
+      title: "Phase 2 Fundraising Campaign",
+      date: "October 2024",
+      category: "Project Update",
+      categoryColor: "bg-primary",
+      description: "We are excited to announce the launch of our Phase 2 fundraising campaign as we move closer to breaking ground on our new facility.",
+      image: "/images/renderings/mau-rendering-cam-03.jpg"
+    },
+    {
+      title: "Community Engagement Sessions",
+      date: "September 2024",
+      category: "Events",
+      categoryColor: "bg-accent",
+      description: "Join us for regular community sessions where we share updates on the project progress and gather feedback from our community members.",
+      image: null
+    }
+  ];
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Updates" }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<div class="bg-secondary py-20"> <div class="container mx-auto px-4 text-center"> <h1 class="text-4xl font-bold text-dark mb-6">News & Updates</h1> <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+Stay up to date with the latest announcements, events, and project progress.
+</p> </div> </div>  <section class="py-16 bg-white"> <div class="container mx-auto px-4"> <div class="max-w-4xl mx-auto"> <div class="flex items-center justify-between mb-8"> <div> <h2 class="text-2xl font-bold text-dark">Newsletters</h2> <p class="text-gray-600 mt-1">Download our monthly community newsletters</p> </div> <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path> </svg> </div> <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"> ${newsletters.map((newsletter) => renderTemplate`<a${addAttribute(newsletter.pdfUrl, "href")} target="_blank" rel="noopener" class="group block bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1"> <div${addAttribute(`h-32 bg-gradient-to-br ${newsletter.coverColor} flex items-center justify-center`, "class")}> <div class="text-center text-white"> <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto mb-2 opacity-90" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path> </svg> <span class="text-sm font-semibold uppercase tracking-wider opacity-90">PDF</span> </div> </div> <div class="p-5"> <span class="text-xs text-primary font-semibold uppercase tracking-wide">${newsletter.date}</span> <h3 class="font-bold text-dark mt-1 group-hover:text-primary transition-colors">${newsletter.title}</h3> <p class="text-sm text-gray-600 mt-2 line-clamp-2">${newsletter.description}</p> <div class="flex items-center gap-2 mt-4 text-primary text-sm font-semibold"> <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path> </svg>
+Download PDF
+</div> </div> </a>`)} <!-- Coming Soon Card --> <div class="block bg-gray-50 rounded-xl border-2 border-dashed border-gray-200 overflow-hidden"> <div class="h-32 bg-gray-100 flex items-center justify-center"> <div class="text-center text-gray-400"> <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path> </svg> </div> </div> <div class="p-5"> <span class="text-xs text-gray-400 font-semibold uppercase tracking-wide">Coming Soon</span> <h3 class="font-bold text-gray-400 mt-1">More Newsletters</h3> <p class="text-sm text-gray-400 mt-2">Subscribe to receive updates when new newsletters are published.</p> </div> </div> </div> </div> </div> </section>  <section class="py-16 bg-secondary"> <div class="container mx-auto px-4"> <div class="max-w-4xl mx-auto"> <h2 class="text-2xl font-bold text-dark mb-8">Latest Updates</h2> <div class="space-y-6"> ${updates.map((update) => renderTemplate`<article class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow flex flex-col md:flex-row"> ${update.image ? renderTemplate`<div class="md:w-1/3 h-48 md:h-auto relative"> <img${addAttribute(update.image, "src")}${addAttribute(update.title, "alt")} class="w-full h-full object-cover"> <div${addAttribute(`absolute top-4 left-4 ${update.categoryColor} text-white text-xs font-bold px-3 py-1 rounded-full`, "class")}> ${update.category} </div> </div>` : renderTemplate`<div class="md:w-1/3 h-48 md:h-auto bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center relative"> <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary/40" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path> </svg> <div${addAttribute(`absolute top-4 left-4 ${update.categoryColor} text-white text-xs font-bold px-3 py-1 rounded-full`, "class")}> ${update.category} </div> </div>`} <div class="p-8 md:w-2/3"> <span class="text-sm text-gray-500 block mb-2">${update.date}</span> <h3 class="text-xl font-bold text-dark mb-3">${update.title}</h3> <p class="text-gray-600">${update.description}</p> </div> </article>`)} </div> </div> </div> </section>  <section class="py-16 bg-dark text-white"> <div class="container mx-auto px-4 text-center max-w-2xl"> <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path> </svg> <h2 class="text-2xl font-bold mb-4">Stay Connected</h2> <p class="text-gray-300 mb-8">
+Follow us on social media or reach out to join our mailing list for the latest news and updates about Masjid Al Ummah.
+</p> <div class="flex flex-col sm:flex-row gap-4 justify-center"> <a href="/contact" class="px-6 py-3 bg-primary text-white font-bold rounded-lg hover:bg-accent transition-colors">
+Contact Us
+</a> <a href="mailto:info@masjidalummah.org" class="px-6 py-3 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-colors">
+Email Us
+</a> </div> </div> </section> ` })}`;
+}, "C:/Users/dad/Documents/mau-fe/src/pages/updates.astro", void 0);
+
+const $$file = "C:/Users/dad/Documents/mau-fe/src/pages/updates.astro";
+const $$url = "/updates";
+
+const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: $$Updates,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const page = () => _page;
+
+export { page };
