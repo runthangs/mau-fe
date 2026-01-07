@@ -1,14 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-// Manual list based on known files
+// Manual list based on available files
 const renderings = [
-  { src: '/images/renderings/mau-rendering-cam-01.jpg', alt: 'Exterior Front View' },
-  { src: '/images/renderings/mau-rendering-cam-02.jpg', alt: 'Exterior Side View' },
+  { src: '/images/mau-frontage-right.png', alt: 'Exterior Front View' },
+  { src: '/images/renderings/mau-rendering-hero.jpg', alt: 'Main Exterior View' },
   { src: '/images/renderings/mau-rendering-cam-03.jpg', alt: 'Community Hall' },
   { src: '/images/renderings/mau-rendering-cam-04.jpg', alt: 'Prayer Hall' },
-  { src: '/images/renderings/mau-rendering-cam-05.jpg', alt: 'Entrance Foyer' },
+  { src: '/images/mau-inside.jpg', alt: 'Current Interior' },
   { src: '/images/renderings/mau-rendering-cam-06.jpg', alt: 'Library & Study Area' },
+  { src: '/images/mau-front.jpg', alt: 'Current Building' },
+  { src: '/images/mau-wide-elevations-plans.jpg', alt: 'Architectural Plans' },
 ];
 ---
 
@@ -45,7 +47,10 @@ const renderings = [
       <h2 class="text-3xl font-bold text-dark mb-10 text-center">Project Renderings</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {renderings.map((img) => (
-          <div class="group relative overflow-hidden rounded-xl shadow-lg aspect-[4/3] cursor-pointer">
+          <div
+            class="group relative overflow-hidden rounded-xl shadow-lg aspect-[4/3] cursor-pointer"
+            onclick={`openLightbox('${img.src}', '${img.alt}')`}
+          >
             <img
               src={img.src}
               alt={img.alt}
@@ -53,6 +58,9 @@ const renderings = [
             />
             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
               <span class="text-white font-medium text-lg">{img.alt}</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-auto text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg>
             </div>
           </div>
         ))}
@@ -60,30 +68,47 @@ const renderings = [
     </div>
   </section>
 
-  <!-- Timeline / Progress (Optional placeholder) -->
+  <!-- Timeline Image -->
   <section class="py-16 bg-secondary">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold text-dark mb-12">Project Timeline</h2>
-      <div class="max-w-3xl mx-auto border-l-4 border-primary pl-8 text-left space-y-12">
-        <div class="relative">
-          <div class="absolute -left-[41px] w-6 h-6 rounded-full bg-primary border-4 border-white"></div>
-          <span class="text-sm font-bold text-primary uppercase tracking-widest">Phase 1 - Completed</span>
-          <h3 class="text-xl font-bold text-dark mt-2">Land Acquisition & Planning</h3>
-          <p class="text-gray-600 mt-2">The site was secured and planning permission was granted by the local council.</p>
-        </div>
-        <div class="relative">
-          <div class="absolute -left-[41px] w-6 h-6 rounded-full bg-white border-4 border-primary"></div>
-          <span class="text-sm font-bold text-dark uppercase tracking-widest">Phase 2 - Current</span>
-          <h3 class="text-xl font-bold text-dark mt-2">Fundraising & Groundbreaking</h3>
-          <p class="text-gray-600 mt-2">We are currently raising funds for the main construction contract. Groundbreaking is expected in late 2025.</p>
-        </div>
-        <div class="relative opacity-60">
-          <div class="absolute -left-[41px] w-6 h-6 rounded-full bg-gray-300 border-4 border-white"></div>
-          <span class="text-sm font-bold text-gray-500 uppercase tracking-widest">Phase 3 - Future</span>
-          <h3 class="text-xl font-bold text-gray-700 mt-2">Construction & Completion</h3>
-          <p class="text-gray-500 mt-2">Main build, interior fit-out, and official opening of the new center.</p>
-        </div>
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-10 text-center">Project Timeline</h2>
+      <div class="max-w-5xl mx-auto">
+        <img
+          src="/images/mau-timeline.png"
+          alt="Masjid Al Ummah Project Timeline"
+          class="w-full rounded-2xl shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
+          onclick="openLightbox(this.src, this.alt)"
+        />
       </div>
     </div>
   </section>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4" onclick="closeLightbox()">
+    <button class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300" onclick="closeLightbox()">&times;</button>
+    <img id="lightbox-img" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg" onclick="event.stopPropagation()" />
+  </div>
+
+  <script is:inline>
+    function openLightbox(src, alt) {
+      const lightbox = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      img.src = src;
+      img.alt = alt;
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
 </Layout>
