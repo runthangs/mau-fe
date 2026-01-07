@@ -60,10 +60,6 @@ const PrayerTimes = () => {
             <span className="font-bold text-primary">{prayers[name]}</span>
           </div>
         ))}
-        <div className="flex justify-between items-center px-6 py-3 bg-secondary/30">
-          <span className="font-medium text-text text-sm">Jumu'ah</span>
-          <span className="font-bold text-primary text-sm">1:15 PM</span>
-        </div>
       </div>
 
       <div className="px-6 py-4 bg-gray-50 text-center">
