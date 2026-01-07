@@ -62,11 +62,6 @@ const PrayerTimes = () => {
         ))}
       </div>
 
-      <div className="px-6 py-4 bg-gray-50 text-center">
-        <a href="/prayer-times" className="text-xs text-gray-500 hover:text-primary underline">
-          View full timetable
-        </a>
-      </div>
     </div>
   );
 };
