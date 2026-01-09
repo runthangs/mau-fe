@@ -3,8 +3,11 @@ import { Image } from 'astro:assets';
 
 const navItems = [
   { name: 'Home', href: '/' },
+  { name: 'About', href: '/about' },
   { name: 'The Project', href: '/project' },
   { name: 'Services', href: '/services' },
+  { name: 'Gym', href: '/gym' },
+  { name: 'Events', href: '/events' },
   { name: 'Updates', href: '/updates' },
   { name: 'Contact', href: '/contact' },
 ];
@@ -19,7 +22,7 @@ const navItems = [
       </a>
 
       <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center space-x-8">
+      <nav class="hidden lg:flex items-center space-x-6">
         {navItems.map((item) => (
           <a
             href={item.href}
@@ -29,20 +32,97 @@ const navItems = [
           </a>
         ))}
         <a
-          href="https://masjidalummah.org/donate"
-          target="_blank"
+          href="/donate"
           class="bg-primary text-white px-5 py-2 rounded-full font-semibold hover:bg-accent transition-colors shadow-sm"
         >
           Donate
         </a>
       </nav>
 
-      <!-- Mobile Menu Button (Placeholder for simplicity) -->
-      <button class="md:hidden text-text p-2">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-btn"
+        class="lg:hidden text-text p-2 relative z-50"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+      >
+        <!-- Hamburger Icon -->
+        <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <!-- Close Icon (hidden by default) -->
+        <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
     </div>
   </div>
+
+  <!-- Mobile Menu Panel -->
+  <div id="mobile-menu" class="lg:hidden fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300 ease-in-out">
+    <div class="flex flex-col h-full pt-24 px-6">
+      <nav class="flex flex-col space-y-4">
+        {navItems.map((item) => (
+          <a
+            href={item.href}
+            class="mobile-nav-link text-text font-medium hover:text-primary transition-colors text-lg uppercase tracking-wide py-3 border-b border-gray-100"
+          >
+            {item.name}
+          </a>
+        ))}
+        <a
+          href="/donate"
+          class="mobile-nav-link bg-primary text-white px-6 py-4 rounded-full font-semibold hover:bg-accent transition-colors shadow-sm text-center mt-4"
+        >
+          Donate Now
+        </a>
+      </nav>
+    </div>
+  </div>
 </header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const openIcon = document.getElementById('menu-icon-open');
+    const closeIcon = document.getElementById('menu-icon-close');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+    let isOpen = false;
+
+    function toggleMenu() {
+      isOpen = !isOpen;
+
+      if (isOpen) {
+        mobileMenu.classList.remove('translate-x-full');
+        mobileMenu.classList.add('translate-x-0');
+        openIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        menuBtn.setAttribute('aria-expanded', 'true');
+      } else {
+        mobileMenu.classList.add('translate-x-full');
+        mobileMenu.classList.remove('translate-x-0');
+        openIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+        document.body.style.overflow = '';
+        menuBtn.setAttribute('aria-expanded', 'false');
+      }
+    }
+
+    menuBtn.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking a link
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (isOpen) toggleMenu();
+      });
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isOpen) toggleMenu();
+    });
+  });
+</script>

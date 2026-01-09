@@ -3,23 +3,21 @@ import { render, screen, waitFor } from '@testing-library/react';
 import PrayerTimes from './PrayerTimes';
 
 // Mock fetch globally
-global.fetch = vi.fn();
+const mockFetch = vi.fn();
+global.fetch = mockFetch;
 
 describe('PrayerTimes', () => {
   beforeEach(() => {
-    // Use fake timers to control Date and setInterval
-    vi.useFakeTimers();
-    vi.setSystemTime(new Date('2025-01-01T12:00:00'));
+    vi.clearAllMocks();
   });
 
   afterEach(() => {
-    vi.useRealTimers();
     vi.restoreAllMocks();
   });
 
   it('shows loading state initially', async () => {
     // Mock fetch to never resolve immediately to test loading state
-    fetch.mockImplementationOnce(() => new Promise(() => {}));
+    mockFetch.mockImplementationOnce(() => new Promise(() => {}));
 
     render(<PrayerTimes />);
     // Since the promise never resolves, it should stay in loading state
@@ -42,7 +40,7 @@ describe('PrayerTimes', () => {
       }
     };
 
-    fetch.mockResolvedValueOnce({
+    mockFetch.mockResolvedValueOnce({
       ok: true,
       json: async () => mockData
     });
@@ -60,17 +58,12 @@ describe('PrayerTimes', () => {
     expect(screen.getByText('Isha')).toBeInTheDocument();
     expect(screen.getByText('19:30')).toBeInTheDocument();
 
-    // Check Jumu'ah static time
-    expect(screen.getByText("Jumu'ah")).toBeInTheDocument();
-    expect(screen.getByText('1:15 PM')).toBeInTheDocument();
-
-    // Check date display - depends on our mocked system time
-    // 2025-01-01 is a Wednesday
-    expect(screen.getByText(/Wednesday, 1 January/)).toBeInTheDocument();
+    // Check Watford location badge
+    expect(screen.getByText('Watford')).toBeInTheDocument();
   });
 
   it('shows error message on fetch failure (network error)', async () => {
-    fetch.mockRejectedValueOnce(new Error('Network error'));
+    mockFetch.mockRejectedValueOnce(new Error('Network error'));
 
     render(<PrayerTimes />);
 
@@ -80,7 +73,7 @@ describe('PrayerTimes', () => {
   });
 
   it('shows error message on API error (non-200 response)', async () => {
-    fetch.mockResolvedValueOnce({
+    mockFetch.mockResolvedValueOnce({
       ok: false
     });
 

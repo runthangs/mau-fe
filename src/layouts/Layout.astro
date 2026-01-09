@@ -25,10 +25,44 @@ const { title, description = "Masjid Al Ummah - The Heart of Watford" } = Astro.
 		<title>{title} | Masjid Al Ummah</title>
 	</head>
 	<body class="font-sans text-text bg-secondary min-h-screen flex flex-col">
+		<!-- Skip to main content for accessibility -->
+		<a href="#main-content" class="skip-link">Skip to main content</a>
+
 		<Navbar />
-		<main class="flex-grow">
+		<main id="main-content" class="flex-grow">
 			<slot />
 		</main>
 		<Footer />
+
+		<!-- Scroll to top button -->
+		<button
+			id="scroll-top-btn"
+			class="scroll-top-btn"
+			aria-label="Scroll to top"
+		>
+			<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+			</svg>
+		</button>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const scrollTopBtn = document.getElementById('scroll-top-btn');
+
+				if (scrollTopBtn) {
+					window.addEventListener('scroll', () => {
+						if (window.scrollY > 300) {
+							scrollTopBtn.classList.add('visible');
+						} else {
+							scrollTopBtn.classList.remove('visible');
+						}
+					});
+
+					scrollTopBtn.addEventListener('click', () => {
+						window.scrollTo({ top: 0, behavior: 'smooth' });
+					});
+				}
+			});
+		</script>
 	</body>
 </html>
