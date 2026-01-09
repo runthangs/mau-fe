@@ -106,18 +106,14 @@ const membershipPlans = [
 
   <!-- Hero Section -->
   <section class="relative bg-dark text-white py-24 overflow-hidden">
-    <div class="absolute inset-0 opacity-20">
-      <div class="absolute inset-0 bg-gradient-to-br from-primary/30 to-transparent"></div>
-      <!-- Abstract geometric pattern -->
-      <svg class="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="gym-pattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
-            <circle cx="30" cy="30" r="2" fill="currentColor" opacity="0.3"/>
-            <path d="M0 30h60M30 0v60" stroke="currentColor" stroke-width="0.5" opacity="0.1"/>
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#gym-pattern)"/>
-      </svg>
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+      <img
+        src="https://images.unsplash.com/photo-1623874514711-0f321325f318?w=1920&q=80"
+        alt="Gym equipment"
+        class="w-full h-full object-cover opacity-30"
+      />
+      <div class="absolute inset-0 bg-gradient-to-br from-dark via-dark/80 to-primary/20"></div>
     </div>
     <div class="container mx-auto px-4 relative z-10">
       <div class="max-w-4xl mx-auto text-center">
@@ -298,6 +294,74 @@ const membershipPlans = [
           </div>
         ))}
       </div>
+    </div>
+  </section>
+
+  <!-- Gym Gallery -->
+  <section class="py-16 bg-secondary">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Envision Your Training Space</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Our state-of-the-art facility will feature modern equipment in a clean, inspiring environment.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
+        <div class="aspect-square rounded-xl overflow-hidden shadow-lg">
+          <img
+            src="https://images.unsplash.com/photo-1638536532686-d610adfc8e5c?w=400&q=80"
+            alt="Dumbbells rack"
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+        <div class="aspect-square rounded-xl overflow-hidden shadow-lg">
+          <img
+            src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=400&q=80"
+            alt="Treadmills"
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+        <div class="aspect-square rounded-xl overflow-hidden shadow-lg">
+          <img
+            src="https://images.unsplash.com/photo-1623874514711-0f321325f318?w=400&q=80"
+            alt="Weight plates"
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+        <div class="aspect-square rounded-xl overflow-hidden shadow-lg">
+          <img
+            src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?w=400&q=80"
+            alt="Kettlebells"
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+        <div class="aspect-square rounded-xl overflow-hidden shadow-lg md:col-span-2">
+          <img
+            src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80"
+            alt="Modern gym floor"
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+        <div class="aspect-square rounded-xl overflow-hidden shadow-lg">
+          <img
+            src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&q=80"
+            alt="Barbell and weights"
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+        <div class="aspect-square rounded-xl overflow-hidden shadow-lg">
+          <img
+            src="https://images.unsplash.com/photo-1581009146145-b5ef050c149a?w=400&q=80"
+            alt="Cable machine"
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+      </div>
+
+      <p class="text-center text-gray-500 text-sm mt-6 italic">
+        *Images are representative of the quality and style of equipment planned for our facility.
+      </p>
     </div>
   </section>
 
