@@ -1,0 +1,64 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+/* empty css                                 */
+import { e as createComponent, k as renderComponent, r as renderTemplate, m as maybeRenderHead, h as addAttribute } from '../chunks/astro/server_Bnsn6rJt.mjs';
+import { $ as $$Layout } from '../chunks/Layout_CHa28reb.mjs';
+export { r as renderers } from '../chunks/_@astro-renderers_DmkUz6xk.mjs';
+
+const $$Donate = createComponent(($$result, $$props, $$slots) => {
+  const fundraising = {
+    raised: "\xA3880,000",
+    goal: "\xA34,000,000",
+    percentage: 22};
+  const supportItems = [
+    {
+      title: "Building Construction",
+      description: "Contributing towards the structural development of our new 30,000 sq ft facility, including prayer halls and community spaces.",
+      icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+    },
+    {
+      title: "Education Programs",
+      description: "Funding our Madrasah, youth leadership initiatives, and adult learning courses to build a knowledgeable community.",
+      icon: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+    },
+    {
+      title: "Community Services",
+      description: "Supporting social support services, youth clubs, elderly care, and outreach programs that serve the wider Watford community.",
+      icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+    }
+  ];
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Donate", "description": "Support the construction and services of Masjid Al Ummah. Your donation builds a legacy for the Watford community." }, { "default": ($$result2) => renderTemplate`  ${maybeRenderHead()}<div class="bg-primary/10 py-20"> <div class="container mx-auto px-4 text-center"> <h1 class="text-4xl md:text-5xl font-bold text-dark mb-6">Support Our Mission</h1> <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+Your contributions help us build a lasting legacy and provide vital services for the community in Watford.
+</p> </div> </div>  <section class="py-16"> <div class="container mx-auto px-4"> <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100"> <div class="text-center mb-10"> <h2 class="text-3xl font-bold text-dark mb-4">Fundraising Progress</h2> <p class="text-gray-600">Phase 2: Construction & Fit-out</p> </div> <div class="mb-8"> <div class="flex justify-between items-end mb-2"> <div> <span class="text-3xl font-bold text-primary">${fundraising.raised}</span> <span class="text-gray-500 ml-1">raised of ${fundraising.goal} goal</span> </div> <div class="text-right"> <span class="text-2xl font-bold text-dark">${fundraising.percentage}%</span> </div> </div> <div class="w-full bg-gray-100 h-4 rounded-full overflow-hidden"> <div class="bg-primary h-full rounded-full transition-all duration-1000"${addAttribute(`width: ${fundraising.percentage}%`, "style")}></div> </div> </div> <div class="text-center"> <a href="https://masjidalummah.org/donate" target="_blank" class="inline-block px-10 py-4 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+Donate on LaunchGood
+</a> <p class="mt-4 text-sm text-gray-500">Secure, fast, and easy online donation</p> </div> </div> </div> </section>  <section class="py-16 bg-secondary"> <div class="container mx-auto px-4 text-center"> <div class="max-w-3xl mx-auto"> <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-primary/30 mx-auto mb-6" fill="currentColor" viewBox="0 0 24 24"> <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H16.017C14.9124 8 14.017 7.10457 14.017 6V3L14.017 3C14.017 1.89543 14.9124 1 16.017 1H19.017C21.2261 1 23.017 2.79086 23.017 5V15C23.017 17.2091 21.2261 19 19.017 19H17.517C17.2409 19 17.017 21.2386 17.017 21.5C17.017 21.7761 16.7931 22 16.517 22H15.017C14.4647 22 14.017 21.5523 14.017 21ZM3.017 21L3.017 18C3.017 16.8954 3.91243 16 5.017 16H8.017C8.56928 16 9.017 15.5523 9.017 15V9C9.017 8.44772 8.56928 8 8.017 8H5.017C3.91243 8 3.017 7.10457 3.017 6V3L3.017 3C3.017 1.89543 3.91243 1 5.017 1H8.017C10.2261 1 12.017 2.79086 12.017 5V15C12.017 17.2091 10.2261 19 8.017 19H6.517C6.24086 19 6.017 21.2386 6.017 21.5C6.017 21.7761 5.79315 22 5.517 22H4.017C3.46472 22 3.017 21.5523 3.017 21Z"></path> </svg> <blockquote class="text-2xl md:text-3xl font-serif italic text-dark mb-6">
+"Whoever builds a mosque for Allah, Allah will build for him a house in Paradise."
+</blockquote> <cite class="text-primary font-bold not-italic">— Prophet Muhammad (peace be upon him)</cite> </div> </div> </section>  <section class="py-16"> <div class="container mx-auto px-4"> <div class="text-center mb-12"> <h2 class="text-3xl font-bold text-dark mb-4">What Your Donation Supports</h2> <p class="text-gray-600 max-w-2xl mx-auto">Every pound you give goes directly towards creating a vibrant future for the Muslim community in Watford.</p> </div> <div class="grid grid-cols-1 md:grid-cols-3 gap-8"> ${supportItems.map((item) => renderTemplate`<div class="bg-white p-8 rounded-xl border border-gray-100 shadow-sm"> <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-6"> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"${addAttribute(item.icon, "d")}></path> </svg> </div> <h3 class="text-xl font-bold text-dark mb-3">${item.title}</h3> <p class="text-gray-600 leading-relaxed"> ${item.description} </p> </div>`)} </div> </div> </section>  <section class="py-16 bg-dark text-white"> <div class="container mx-auto px-4"> <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-12"> <div class="md:w-2/3"> <h2 class="text-3xl font-bold mb-6">Tax-Deductible Donations</h2> <p class="text-gray-300 mb-6 leading-relaxed">
+Masjid Al Ummah is a project of the <strong>Ar-Rahmah Trust</strong>, a registered charity in England and Wales (<strong>Charity No: 1204404</strong>).
+</p> <p class="text-gray-300 mb-6 leading-relaxed">
+If you are a UK taxpayer, we can claim Gift Aid on your donation, increasing its value by 25% at no extra cost to you. This significantly boosts the impact of your contribution.
+</p> <div class="bg-white/10 p-4 rounded-lg border border-white/20"> <p class="text-sm italic">
+"The example of those who spend their wealth in the way of Allah is like a seed [of grain] which grows seven spikes; in each spike is a hundred grains. And Allah multiplies [His reward] for whom He wills." (Quran 2:261)
+</p> </div> </div> <div class="md:w-1/3 bg-primary p-8 rounded-2xl text-center"> <h4 class="text-xl font-bold mb-4">Other Ways to Give</h4> <p class="text-primary-50 text-sm mb-6">
+For bank transfers, standing orders, or large institutional donations, please contact our finance team.
+</p> <a href="/contact" class="block w-full py-3 bg-white text-primary font-bold rounded-lg hover:bg-gray-100 transition-all">
+Get Bank Details
+</a> </div> </div> </div> </section>  <section class="py-20 text-center"> <div class="container mx-auto px-4"> <h2 class="text-3xl md:text-4xl font-bold text-dark mb-6">Build Your House in Paradise Today</h2> <p class="text-gray-600 mb-10 max-w-xl mx-auto">
+Don't miss the opportunity to be part of this Sadaqah Jariyah (ongoing charity) that will benefit generations to come.
+</p> <a href="https://masjidalummah.org/donate" target="_blank" class="inline-block px-12 py-5 bg-primary text-white font-bold text-lg rounded-xl hover:bg-primary/90 transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+Donate via LaunchGood
+</a> </div> </section> ` })}`;
+}, "C:/Users/kashi/Documents/mau-fe/src/pages/donate.astro", void 0);
+
+const $$file = "C:/Users/kashi/Documents/mau-fe/src/pages/donate.astro";
+const $$url = "/donate";
+
+const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: $$Donate,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const page = () => _page;
+
+export { page };

@@ -1,0 +1,89 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+/* empty css                                 */
+import { e as createComponent, k as renderComponent, r as renderTemplate, m as maybeRenderHead, h as addAttribute } from '../chunks/astro/server_Bnsn6rJt.mjs';
+import { $ as $$Layout } from '../chunks/Layout_CHa28reb.mjs';
+export { r as renderers } from '../chunks/_@astro-renderers_DmkUz6xk.mjs';
+
+const $$About = createComponent(($$result, $$props, $$slots) => {
+  const timeline = [
+    {
+      year: "2015",
+      title: "The Vision Begins",
+      description: "A small group of community members identified the growing need for a proper masjid and community center in Watford."
+    },
+    {
+      year: "2018",
+      title: "Ar-Rahmah Trust Formed",
+      description: "The Ar-Rahmah Trust was officially established as a registered charity (No. 1204404) to oversee the masjid project."
+    },
+    {
+      year: "2021",
+      title: "Site Acquisition",
+      description: "After years of searching, a suitable site was identified and negotiations began for the future home of Masjid Al Ummah."
+    },
+    {
+      year: "2023",
+      title: "Architectural Plans",
+      description: "Professional architects were engaged to design a modern, purpose-built facility that serves the community's diverse needs."
+    },
+    {
+      year: "2024",
+      title: "Phase 2 Fundraising",
+      description: "The LaunchGood campaign launched to raise funds for the construction phase, with the community rallying together."
+    },
+    {
+      year: "2025+",
+      title: "Building the Future",
+      description: "Construction begins on the 30,000 sq ft facility that will serve Watford's 15,000+ Muslims for generations to come."
+    }
+  ];
+  const team = [
+    {
+      role: "Imam & Religious Director",
+      description: "Providing spiritual guidance, leading prayers, and delivering khutbahs."
+    },
+    {
+      role: "Education Committee",
+      description: "Overseeing the Madrasah, youth programs, and adult education initiatives."
+    },
+    {
+      role: "Community Outreach",
+      description: "Building bridges with local organizations, councils, and interfaith groups."
+    },
+    {
+      role: "Operations & Facilities",
+      description: "Managing day-to-day operations, maintenance, and event coordination."
+    }
+  ];
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "About Us", "description": "Learn about Masjid Al Ummah's mission, history, and the team behind Watford's next-generation community hub." }, { "default": ($$result2) => renderTemplate`  ${maybeRenderHead()}<div class="bg-primary/10 py-20"> <div class="container mx-auto px-4 text-center"> <h1 class="text-4xl md:text-5xl font-bold text-dark mb-6">Our Story</h1> <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+Returning to the mosque's original role as the heart of the community.
+</p> </div> </div>  <section class="py-16 bg-white"> <div class="container mx-auto px-4"> <div class="flex flex-col md:flex-row items-center gap-12"> <div class="md:w-1/2"> <h2 class="text-accent text-sm font-bold uppercase tracking-widest mb-2">Our Mission</h2> <h3 class="text-3xl font-bold text-dark mb-6">More Than Just a Mosque</h3> <p class="text-gray-600 mb-4 text-lg leading-relaxed">
+Masjid Al Ummah is Watford's next-generation masjid and community hub for youth and families. We are returning to the original mosque's role as a center for worship, learning, social support, and civic engagement.
+</p> <p class="text-gray-600 mb-4 leading-relaxed">
+Throughout Islamic history, the masjid was never just a place of prayer. It was the community's school, its town hall, its social services center, and its gathering place. The Prophet's Mosque (peace be upon him) served all these functions.
+</p> <p class="text-gray-600 leading-relaxed">
+We are building a facility designed for the digital age—a place where every member, especially our youth, can worship, create, collaborate, and shape the future of our community.
+</p> </div> <div class="md:w-1/2"> <div class="bg-secondary rounded-2xl p-8"> <h4 class="text-xl font-bold text-dark mb-6">Our Core Pillars</h4> <div class="space-y-4"> <div class="flex items-start gap-4"> <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary flex-shrink-0"> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path> </svg> </div> <div> <h5 class="font-bold text-dark">Worship</h5> <p class="text-sm text-gray-600">Five daily prayers, Jumu'ah, Taraweeh, and Eid in a welcoming space.</p> </div> </div> <div class="flex items-start gap-4"> <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary flex-shrink-0"> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path> </svg> </div> <div> <h5 class="font-bold text-dark">Youth Leadership</h5> <p class="text-sm text-gray-600">Empowering the next generation with Quran-based leadership skills.</p> </div> </div> <div class="flex items-start gap-4"> <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary flex-shrink-0"> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path> </svg> </div> <div> <h5 class="font-bold text-dark">Community Hub</h5> <p class="text-sm text-gray-600">A safe space for dialogue, social support, and civic engagement.</p> </div> </div> <div class="flex items-start gap-4"> <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary flex-shrink-0"> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path> </svg> </div> <div> <h5 class="font-bold text-dark">Digital & Creative</h5> <p class="text-sm text-gray-600">Merging tradition with innovation through digital literacy and arts.</p> </div> </div> </div> </div> </div> </div> </div> </section>  <section class="py-16 bg-secondary"> <div class="container mx-auto px-4"> <div class="text-center mb-12"> <h2 class="text-3xl font-bold text-dark mb-4">Our Journey</h2> <p class="text-gray-600 max-w-2xl mx-auto">From a vision shared by a few to a community project embraced by many.</p> </div> <div class="max-w-4xl mx-auto"> <div class="relative"> <!-- Timeline line --> <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary/20 transform md:-translate-x-1/2"></div> ${timeline.map((item, index) => renderTemplate`<div${addAttribute(`relative flex items-center mb-8 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`, "class")}> <div class="absolute left-4 md:left-1/2 w-4 h-4 bg-primary rounded-full transform -translate-x-1/2 z-10"></div> <div${addAttribute(`ml-12 md:ml-0 md:w-1/2 ${index % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"}`, "class")}> <div class="bg-white p-6 rounded-xl shadow-sm"> <span class="text-primary font-bold text-lg">${item.year}</span> <h4 class="font-bold text-dark text-lg mt-1">${item.title}</h4> <p class="text-gray-600 text-sm mt-2">${item.description}</p> </div> </div> </div>`)} </div> </div> </div> </section>  <section class="py-16 bg-dark text-white"> <div class="container mx-auto px-4"> <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center"> <div> <span class="block text-4xl md:text-5xl font-bold text-primary mb-2">15K+</span> <span class="text-gray-400 text-sm uppercase tracking-wide">Muslims in Watford</span> </div> <div> <span class="block text-4xl md:text-5xl font-bold text-primary mb-2">30K</span> <span class="text-gray-400 text-sm uppercase tracking-wide">Sq Ft Facility</span> </div> <div> <span class="block text-4xl md:text-5xl font-bold text-primary mb-2">500+</span> <span class="text-gray-400 text-sm uppercase tracking-wide">Prayer Capacity</span> </div> <div> <span class="block text-4xl md:text-5xl font-bold text-primary mb-2">7</span> <span class="text-gray-400 text-sm uppercase tracking-wide">Days a Week</span> </div> </div> </div> </section>  <section class="py-16 bg-white"> <div class="container mx-auto px-4"> <div class="text-center mb-12"> <h2 class="text-3xl font-bold text-dark mb-4">Our Structure</h2> <p class="text-gray-600 max-w-2xl mx-auto">
+Masjid Al Ummah is a project of the Ar-Rahmah Trust (Charity No: 1204404), governed by a board of trustees committed to transparency and community service.
+</p> </div> <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"> ${team.map((member) => renderTemplate`<div class="bg-secondary/50 p-6 rounded-xl text-center"> <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-4"> <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path> </svg> </div> <h4 class="font-bold text-dark mb-2">${member.role}</h4> <p class="text-sm text-gray-600">${member.description}</p> </div>`)} </div> </div> </section>  <section class="py-16 bg-primary text-white text-center"> <div class="container mx-auto px-4"> <h2 class="text-3xl font-bold mb-6">Join Our Journey</h2> <p class="text-primary-50 mb-8 max-w-xl mx-auto">
+Whether through prayer, volunteering, or donation, your contribution helps build a legacy for generations to come.
+</p> <div class="flex flex-col sm:flex-row gap-4 justify-center"> <a href="https://masjidalummah.org/donate" target="_blank" class="px-8 py-4 bg-white text-primary font-bold rounded-lg hover:bg-gray-100 transition-all">
+Donate Now
+</a> <a href="/contact" class="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-all">
+Get Involved
+</a> </div> </div> </section> ` })}`;
+}, "C:/Users/kashi/Documents/mau-fe/src/pages/about.astro", void 0);
+
+const $$file = "C:/Users/kashi/Documents/mau-fe/src/pages/about.astro";
+const $$url = "/about";
+
+const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: $$About,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const page = () => _page;
+
+export { page };
