@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
-  <!-- Icon -->
-  <circle cx="200" cy="140" r="80" fill="#12a880"/>
-  <path d="M200 100v80M160 140h80" stroke="#fff" stroke-width="12" stroke-linecap="round"/>
-
-  <!-- Text -->
-  <text x="200" y="260" font-family="Montserrat, sans-serif" font-size="40" font-weight="bold" fill="#ffffff" text-anchor="middle">Masjid Al Ummah</text>
-  <text x="200" y="300" font-family="Montserrat, sans-serif" font-size="16" fill="#12a880" letter-spacing="2" text-anchor="middle">THE HEART OF WATFORD</text>
-</svg>
