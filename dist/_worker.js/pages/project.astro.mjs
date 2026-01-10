@@ -1,7 +1,7 @@
 globalThis.process ??= {}; globalThis.process.env ??= {};
-/* empty css                                 */
+/* empty css                                   */
 import { e as createComponent, k as renderComponent, r as renderTemplate, h as addAttribute, m as maybeRenderHead } from '../chunks/astro/server_Bnsn6rJt.mjs';
-import { $ as $$Layout } from '../chunks/Layout_CHa28reb.mjs';
+import { $ as $$Layout } from '../chunks/Layout_D4i181KZ.mjs';
 export { r as renderers } from '../chunks/_@astro-renderers_DmkUz6xk.mjs';
 
 var __freeze = Object.freeze;
@@ -9,26 +9,141 @@ var __defProp = Object.defineProperty;
 var __template = (cooked, raw) => __freeze(__defProp(cooked, "raw", { value: __freeze(cooked.slice()) }));
 var _a;
 const $$Project = createComponent(($$result, $$props, $$slots) => {
-  const renderings = [
-    { src: "/images/renderings/mau-rendering-hero.jpg", alt: "Future Vision: Exterior" },
-    { src: "/images/mau-interior-foyer-cafe.png", alt: "Community Caf\xE9 & Foyer" },
-    { src: "/images/mau-interior-prayer-hall.png", alt: "Main Prayer Hall" },
-    { src: "/images/mau-interior-sports-hall.png", alt: "Sports Hall" },
-    { src: "/images/mau-interior-gym.png", alt: "Fitness Suite" },
-    { src: "/images/mau-interior-womens-prayer.png", alt: "Women's Prayer Space" },
-    { src: "/images/mau-interior-classroom.png", alt: "Education & Classroom" },
-    { src: "/images/mau-interior-kitchen.png", alt: "Community Kitchen" },
-    { src: "/images/mau-interior-corridor-nursery.png", alt: "Corridor & Nursery" },
-    { src: "/images/mau-interior-wudu.png", alt: "Wudu Facilities" },
-    { src: "/images/mau-wide-elevations-plans.jpg", alt: "Architectural Masterplan" }
+  const facilities = [
+    {
+      src: "/images/renderings/mau-rendering-hero.jpg",
+      title: "Future Vision: Exterior",
+      description: "The architectural design blends modern British aesthetics with subtle Islamic geometry.",
+      category: "architecture"
+    },
+    {
+      src: "/images/03-mau-interior-prayer-hall-v2.png",
+      title: "Daily Prayers & Jumu'ah",
+      description: "Five daily congregational prayers and Friday Jumu'ah service in a peaceful, clean environment for men and women.",
+      category: "worship"
+    },
+    {
+      src: "/images/08-mau-interior-womens-prayer-v2.png",
+      title: "Women's Prayer Space",
+      description: "A dedicated, comfortable prayer area designed specifically for sisters.",
+      category: "worship"
+    },
+    {
+      src: "/images/07-mau-interior-classroom.png",
+      title: "Quran & Islamic Education",
+      description: "Supporting future hafiz and lifelong learning through our Madrasah, Quran memorisation programs, and adult classes.",
+      category: "education"
+    },
+    {
+      src: "/images/12-mau-interior-youth-zone.png",
+      title: "Youth Spaces",
+      description: "Gaming rooms, mentoring programmes, and fun, safe activities designed to give young people a place to hang out and grow.",
+      category: "youth"
+    },
+    {
+      src: "/images/05-mau-interior-gym.png",
+      title: "Health & Fitness",
+      description: "A private, fully equipped gym promoting healthy living and physical wellbeing for the whole community.",
+      category: "facilities"
+    },
+    {
+      src: "/images/04-mau-interior-sports-hall.png",
+      title: "Sports Hall",
+      description: "Encouraging healthy living for all with a multi-purpose sports facility for basketball, badminton, and community activities.",
+      category: "facilities"
+    },
+    {
+      src: "/images/02-mau-interior-corridor-nursery-v2.png",
+      title: "Nursery",
+      description: "A caring early-learning space for young children, nurturing their development in a safe Islamic environment.",
+      category: "education"
+    },
+    {
+      src: "/images/11-mau-interior-library.png",
+      title: "Library",
+      description: "Quiet, useful spaces for students and readers with modern technology and resources for learning.",
+      category: "education"
+    },
+    {
+      src: "/images/14-mau-interior-elderly-lounge.png",
+      title: "Elderly Social Areas",
+      description: "Warm, welcoming places for our elders to connect, relax, and participate in community life.",
+      category: "community"
+    },
+    {
+      src: "/images/10-mau-interior-peace-garden.png",
+      title: "The Peace Garden",
+      description: "A calm refuge for moments of reflection, gratitude, and peace amidst the busy world.",
+      category: "facilities"
+    },
+    {
+      src: "/images/09-mau-interior-kitchen-food-bank.png",
+      title: "Soup Kitchen",
+      description: "Helping the homeless and anyone struggling in Watford with essential food supplies and support.",
+      category: "community"
+    },
+    {
+      src: "/images/01-mau-interior-foyer-cafe-v2.png",
+      title: "Community Caf\xE9 & Foyer",
+      description: "A welcoming entrance and gathering space for the community.",
+      category: "facilities"
+    },
+    {
+      src: "/images/13-mau-interior-marriage-office.png",
+      title: "Marriage Services",
+      description: "Nikah ceremonies and pre-marital counseling to support couples in building strong, faith-centered families.",
+      category: "community"
+    },
+    {
+      src: "/images/06-mau-interior-wudu.png",
+      title: "Wudu Facilities",
+      description: "Clean, accessible ablution areas designed for comfort and convenience.",
+      category: "worship"
+    },
+    {
+      src: "/images/mau-wide-elevations-plans.jpg",
+      title: "Architectural Masterplan",
+      description: "The complete architectural vision for the new Masjid Al Ummah complex.",
+      category: "architecture"
+    }
   ];
-  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "The Project" }, { "default": ($$result2) => renderTemplate(_a || (_a = __template([" ", `<div class="bg-dark text-white py-20"> <div class="container mx-auto px-4 text-center"> <h1 class="text-5xl font-bold mb-6 text-white">The New Masjid Al Ummah</h1> <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+  const team = [
+    {
+      role: "Imam & Religious Director",
+      description: "Providing spiritual guidance, leading prayers, and delivering khutbahs."
+    },
+    {
+      role: "Education Committee",
+      description: "Overseeing the Madrasah, youth programs, and adult education initiatives."
+    },
+    {
+      role: "Community Outreach",
+      description: "Building bridges with local organizations, councils, and interfaith groups."
+    },
+    {
+      role: "Operations & Facilities",
+      description: "Managing day-to-day operations, maintenance, and event coordination."
+    }
+  ];
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "The Project", "description": "Learn about Masjid Al Ummah's mission, vision, and the new community hub we're building for Watford." }, { "default": ($$result2) => renderTemplate(_a || (_a = __template([" ", `<div class="bg-dark text-white py-20"> <div class="container mx-auto px-4 text-center"> <h1 class="text-5xl font-bold mb-6 text-white">The New Masjid Al Ummah</h1> <p class="text-xl text-gray-300 max-w-2xl mx-auto">
 A landmark project for Watford. Designed to be a sustainable, inclusive, and inspiring space for generations to come.
-</p> </div> </div> <section class="py-16"> <div class="container mx-auto px-4"> <div class="max-w-4xl mx-auto mb-16"> <h2 class="text-3xl font-bold text-dark mb-6">Vision & Design</h2> <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+</p> </div> </div>  <section class="py-16 bg-white"> <div class="container mx-auto px-4"> <div class="flex flex-col md:flex-row items-center gap-12"> <div class="md:w-1/2"> <h2 class="text-accent text-sm font-bold uppercase tracking-widest mb-2">Our Mission</h2> <h3 class="text-3xl font-bold text-dark mb-6">More Than Just a Mosque</h3> <p class="text-gray-600 mb-4 text-lg leading-relaxed">
+Masjid Al Ummah is Watford's next-generation masjid and community hub for youth and families. We are returning to the original mosque's role as a center for worship, learning, social support, and civic engagement.
+</p> <p class="text-gray-600 mb-4 leading-relaxed">
+Throughout Islamic history, the masjid was never just a place of prayer. It was the community's school, its town hall, its social services center, and its gathering place. The Prophet's Mosque (peace be upon him) served all these functions.
+</p> <p class="text-gray-600 leading-relaxed">
+We are building a facility designed for the digital age\u2014a place where every member, especially our youth, can worship, create, collaborate, and shape the future of our community.
+</p> </div> <div class="md:w-1/2"> <div class="bg-secondary rounded-2xl p-8"> <h4 class="text-xl font-bold text-dark mb-6">Our Core Pillars</h4> <div class="space-y-4"> <div class="flex items-start gap-4"> <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary flex-shrink-0"> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path> </svg> </div> <div> <h5 class="font-bold text-dark">Worship</h5> <p class="text-sm text-gray-600">Five daily prayers, Jumu'ah, Taraweeh, and Eid in a welcoming space.</p> </div> </div> <div class="flex items-start gap-4"> <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary flex-shrink-0"> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path> </svg> </div> <div> <h5 class="font-bold text-dark">Youth Leadership</h5> <p class="text-sm text-gray-600">Empowering the next generation with Quran-based leadership skills.</p> </div> </div> <div class="flex items-start gap-4"> <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary flex-shrink-0"> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path> </svg> </div> <div> <h5 class="font-bold text-dark">Community Hub</h5> <p class="text-sm text-gray-600">A safe space for dialogue, social support, and civic engagement.</p> </div> </div> <div class="flex items-start gap-4"> <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary flex-shrink-0"> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path> </svg> </div> <div> <h5 class="font-bold text-dark">Digital & Creative</h5> <p class="text-sm text-gray-600">Merging tradition with innovation through digital literacy and arts.</p> </div> </div> </div> </div> </div> </div> </div> </section>  <section class="py-16 bg-secondary"> <div class="container mx-auto px-4"> <div class="max-w-4xl mx-auto mb-16"> <h2 class="text-3xl font-bold text-dark mb-6">Vision & Design</h2> <p class="text-gray-600 mb-6 text-lg leading-relaxed">
 The new Masjid Al Ummah is more than just a building; it's a statement of our commitment to the future. The architectural design blends modern British aesthetics with subtle Islamic geometry, creating a building that is both distinctively Muslim and harmoniously local.
 </p> <p class="text-gray-600 mb-6 text-lg leading-relaxed">
 Key features include:
-</p> <ul class="list-disc list-inside space-y-2 text-gray-600 mb-8 ml-4"> <li>dedicated youth center and creative studio</li> <li>Multi-purpose community hall for events and sports</li> <li>Eco-friendly construction with solar energy and rain harvesting</li> <li>Open library and co-working spaces for students and professionals</li> <li>Fully accessible facilities for the elderly and disabled</li> </ul> </div> <!-- Gallery Grid --> <h2 class="text-3xl font-bold text-dark mb-10 text-center">Project Renderings</h2> <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"> `, ` </div> </div> </section>  <section class="py-16 bg-secondary"> <div class="container mx-auto px-4"> <h2 class="text-3xl font-bold text-dark mb-10 text-center">Project Timeline</h2> <div class="max-w-5xl mx-auto"> <img src="/images/mau-timeline.png" alt="Masjid Al Ummah Project Timeline" class="w-full rounded-2xl shadow-lg cursor-pointer hover:shadow-xl transition-shadow" onclick="openLightbox(this.src, this.alt)"> </div> </div> </section>  <div id="lightbox" class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4" onclick="closeLightbox()"> <button class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300" onclick="closeLightbox()">&times;</button> <img id="lightbox-img" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg" onclick="event.stopPropagation()"> </div> <script>
+</p> <ul class="list-disc list-inside space-y-2 text-gray-600 mb-8 ml-4"> <li>dedicated youth center and creative studio</li> <li>Multi-purpose community hall for events and sports</li> <li>Eco-friendly construction with solar energy and rain harvesting</li> <li>Open library and co-working spaces for students and professionals</li> <li>Fully accessible facilities for the elderly and disabled</li> </ul> </div> <!-- Gallery Grid --> <h2 class="text-3xl font-bold text-dark mb-4 text-center">Planned Facilities & Services</h2> <p class="text-gray-600 max-w-2xl mx-auto text-center mb-10">Everything the new Masjid Al Ummah will offer to serve our growing community.</p> <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"> `, ' </div> </div> </section>  <section class="py-16 bg-dark text-white"> <div class="container mx-auto px-4"> <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center"> <div> <span class="block text-4xl md:text-5xl font-bold text-primary mb-2">15K+</span> <span class="text-gray-400 text-sm uppercase tracking-wide">Muslims in Watford</span> </div> <div> <span class="block text-4xl md:text-5xl font-bold text-primary mb-2">30K</span> <span class="text-gray-400 text-sm uppercase tracking-wide">Sq Ft Facility</span> </div> <div> <span class="block text-4xl md:text-5xl font-bold text-primary mb-2">500+</span> <span class="text-gray-400 text-sm uppercase tracking-wide">Prayer Capacity</span> </div> <div> <span class="block text-4xl md:text-5xl font-bold text-primary mb-2">7</span> <span class="text-gray-400 text-sm uppercase tracking-wide">Days a Week</span> </div> </div> </div> </section>  <section class="py-16 bg-white"> <div class="container mx-auto px-4"> <div class="text-center mb-12"> <h2 class="text-3xl font-bold text-dark mb-4">Our Structure</h2> <p class="text-gray-600 max-w-2xl mx-auto">\nMasjid Al Ummah is a project of the Ar-Rahmah Trust (Charity No: 1204404), governed by a board of trustees committed to transparency and community service.\n</p> </div> <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"> ', ' </div> </div> </section>  <section class="py-16 bg-secondary"> <div class="container mx-auto px-4"> <h2 class="text-3xl font-bold text-dark mb-10 text-center">Project Overview</h2> <div class="max-w-4xl mx-auto"> <video controls class="w-full rounded-2xl shadow-lg" poster="/images/mau-frontage-right.png"> <source src="/images/mau-overview-video.mp4" type="video/mp4">\nYour browser does not support the video tag.\n</video> </div> </div> </section>  <section class="py-16 bg-white"> <div class="container mx-auto px-4"> <div class="text-center mb-10"> <h2 class="text-3xl font-bold text-dark mb-4">Follow Us on Instagram</h2> <p class="text-gray-600">Stay connected with our community updates and events</p> <a href="https://www.instagram.com/masjid_al_ummah" target="_blank" class="inline-flex items-center gap-2 text-primary font-semibold mt-4 hover:text-accent transition-colors">\n@masjid_al_ummah\n<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"> <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path> </svg> </a> </div> <!-- Behold Instagram Widget - Embedded Feed --> <div class="max-w-5xl mx-auto"> <div id="instagram-feed" class="min-h-[400px]"> <!-- Behold.so embed code - replace FEED_ID with actual ID after setup --> <script src="https://w.behold.so/widget.js" type="module"><\/script> ', ` </div> <!-- Fallback if widget doesn't load --> <noscript> <div class="grid grid-cols-2 md:grid-cols-4 gap-4"> <a href="https://www.instagram.com/masjid_al_ummah" target="_blank" class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center"> <span class="text-gray-500">View on Instagram</span> </a> </div> </noscript> </div> </div> </section>  <section class="py-16 bg-primary text-white text-center"> <div class="container mx-auto px-4"> <h2 class="text-3xl font-bold mb-6">Join Our Journey</h2> <p class="text-primary-50 mb-8 max-w-xl mx-auto">
+Whether through prayer, volunteering, or donation, your contribution helps build a legacy for generations to come.
+</p> <div class="flex flex-col sm:flex-row gap-4 justify-center"> <a href="https://masjidalummah.org/donate" target="_blank" class="px-8 py-4 bg-white text-primary font-bold rounded-lg hover:bg-gray-100 transition-all">
+Donate Now
+</a> <a href="/contact" class="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-all">
+Get Involved
+</a> </div> </div> </section>  <div id="lightbox" class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4" onclick="closeLightbox()"> <button class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300" onclick="closeLightbox()">&times;</button> <img id="lightbox-img" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg" onclick="event.stopPropagation()"> </div> <script>
     function openLightbox(src, alt) {
       const lightbox = document.getElementById('lightbox');
       const img = document.getElementById('lightbox-img');
@@ -49,7 +164,7 @@ Key features include:
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeLightbox();
     });
-  <\/script> `])), maybeRenderHead(), renderings.map((img) => renderTemplate`<div class="group relative overflow-hidden rounded-xl shadow-lg aspect-[4/3] cursor-pointer"${addAttribute(`openLightbox('${img.src}', '${img.alt}')`, "onclick")}> <img${addAttribute(img.src, "src")}${addAttribute(img.alt, "alt")} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"> <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6"> <span class="text-white font-medium text-lg">${img.alt}</span> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-auto text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path> </svg> </div> </div>`)) })}`;
+  <\/script> `])), maybeRenderHead(), facilities.map((item) => renderTemplate`<div class="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer"${addAttribute(`openLightbox('${item.src}', '${item.title}')`, "onclick")}> <div class="aspect-[4/3]"> <img${addAttribute(item.src, "src")}${addAttribute(item.title, "alt")} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"> </div> <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6"> <span class="inline-block px-3 py-1 bg-primary/90 text-white text-xs font-semibold rounded-full capitalize w-fit mb-2"> ${item.category} </span> <h3 class="text-white font-bold text-lg mb-1">${item.title}</h3> <p class="text-gray-200 text-sm line-clamp-2">${item.description}</p> </div> <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity"> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path> </svg> </div> </div>`), team.map((member) => renderTemplate`<div class="bg-secondary/50 p-6 rounded-xl text-center"> <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-4"> <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path> </svg> </div> <h4 class="font-bold text-dark mb-2">${member.role}</h4> <p class="text-sm text-gray-600">${member.description}</p> </div>`), renderComponent($$result2, "behold-widget", "behold-widget", { "feed-id": "masjid_al_ummah" })) })}`;
 }, "C:/Users/kashi/Documents/mau-fe/src/pages/project.astro", void 0);
 
 const $$file = "C:/Users/kashi/Documents/mau-fe/src/pages/project.astro";

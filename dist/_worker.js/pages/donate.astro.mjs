@@ -1,7 +1,7 @@
 globalThis.process ??= {}; globalThis.process.env ??= {};
-/* empty css                                 */
+/* empty css                                   */
 import { e as createComponent, k as renderComponent, r as renderTemplate, m as maybeRenderHead, h as addAttribute } from '../chunks/astro/server_Bnsn6rJt.mjs';
-import { $ as $$Layout } from '../chunks/Layout_CHa28reb.mjs';
+import { $ as $$Layout } from '../chunks/Layout_D4i181KZ.mjs';
 export { r as renderers } from '../chunks/_@astro-renderers_DmkUz6xk.mjs';
 
 const $$Donate = createComponent(($$result, $$props, $$slots) => {

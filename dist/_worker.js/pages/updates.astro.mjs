@@ -1,58 +1,144 @@
 globalThis.process ??= {}; globalThis.process.env ??= {};
-/* empty css                                 */
-import { e as createComponent, k as renderComponent, r as renderTemplate, m as maybeRenderHead, l as renderScript, h as addAttribute } from '../chunks/astro/server_Bnsn6rJt.mjs';
-import { $ as $$Layout } from '../chunks/Layout_CHa28reb.mjs';
+/* empty css                                   */
+import { e as createComponent, k as renderComponent, r as renderTemplate, h as addAttribute, m as maybeRenderHead } from '../chunks/astro/server_Bnsn6rJt.mjs';
+import { $ as $$Layout } from '../chunks/Layout_D4i181KZ.mjs';
 export { r as renderers } from '../chunks/_@astro-renderers_DmkUz6xk.mjs';
 
+var __freeze = Object.freeze;
+var __defProp = Object.defineProperty;
+var __template = (cooked, raw) => __freeze(__defProp(cooked, "raw", { value: __freeze(cooked.slice()) }));
+var _a;
 const $$Updates = createComponent(($$result, $$props, $$slots) => {
-  const newsletters = [
-    {
-      title: "March 2025 Newsletter",
-      date: "March 2025",
-      description: "The latest from Masjid Al Ummah - building progress updates, community events, and upcoming programs.",
-      pdfUrl: "https://storage.googleapis.com/wp-static/wp_mau_pillar/2025/07/64ce424c-mau-newsletter-march-2025.pdf",
-      coverColor: "from-primary to-accent"
-    }
-  ];
   const updates = [
     {
-      title: "Building Fund Reaches \xA3880K",
-      date: "January 2025",
-      category: "Fundraising",
-      categoryColor: "bg-primary",
-      description: "Alhamdulillah, we have now raised 22% of our \xA34M target. Thank you to all our generous donors for your continued support.",
-      image: "/images/renderings/mau-rendering-hero.jpg"
+      date: "December 2025",
+      title: "Issue 07: Planning Update",
+      description: "Step by step - building with purpose. Update on planning progress, highways approval, and bat surveys.",
+      image: "/images/newsletters/mau-newsletter-2025-12-issue-07.jpg",
+      tags: ["Newsletter", "Planning"]
     },
     {
-      title: "Phase 2 Fundraising Campaign",
-      date: "October 2024",
-      category: "Project Update",
-      categoryColor: "bg-primary",
-      description: "We are excited to announce the launch of our Phase 2 fundraising campaign as we move closer to breaking ground on our new facility.",
-      image: "/images/renderings/mau-rendering-cam-03.jpg"
+      date: "December 2025",
+      title: "Giving Tuesday Leaderboard",
+      description: "A huge thank you to our supporters. We reached the top of the Giving Tuesday leaderboard!",
+      image: "/images/newsletters/mau-newsletter-2025-12-giving-tuesday.jpg",
+      tags: ["Fundraising"]
     },
     {
-      title: "Community Engagement Sessions",
-      date: "September 2024",
-      category: "Events",
-      categoryColor: "bg-accent",
-      description: "Join us for regular community sessions where we share updates on the project progress and gather feedback from our community members.",
-      image: null
+      date: "November 2025",
+      title: "Planning Application Submitted",
+      description: "A major milestone reached. We have officially submitted our planning application for the new Masjid Al Ummah.",
+      image: "/images/newsletters/mau-newsletter-2025-11-planning-submitted.jpg",
+      tags: ["Milestone", "Planning"]
+    },
+    {
+      date: "November 2025",
+      title: "Nascot Residents Association AGM",
+      description: "Engaging with our neighbours. We were invited to present our eco-friendly design and community plans.",
+      image: "/images/newsletters/mau-newsletter-2025-11-planning-update.jpg",
+      tags: ["Community", "Engagement"]
+    },
+    {
+      date: "September 2025",
+      title: "Issue 06: Community BBQ Success",
+      description: "Recap of our August event which drew 300 enthusiastic visitors to the site.",
+      image: "/images/newsletters/mau-newsletter-2025-09-issue-06-recap.jpg",
+      tags: ["Newsletter", "Event Recap"]
+    },
+    {
+      date: "August 2025",
+      title: "Community Open Day & BBQ",
+      description: "Inviting the community to review plans, share feedback, and enjoy a summer BBQ.",
+      image: "/images/newsletters/mau-newsletter-2025-08-issue-05-invite.jpg",
+      tags: ["Event", "Community"]
+    },
+    {
+      date: "June 2025",
+      title: "Issue 04: The Story of Hajj",
+      description: "Reflecting on the legacy of faith and sacrifice during the blessed month of Dhul-Hijjah.",
+      image: "/images/newsletters/mau-newsletter-2025-06-issue-04.jpg",
+      tags: ["Newsletter", "Faith"]
+    },
+    {
+      date: "June 2025",
+      title: "Eid Al-Adha Mubarak",
+      description: "Wishing our community health, happiness and imaan on this blessed occasion.",
+      image: "/images/newsletters/mau-newsletter-2025-06-eid-al-adha.jpg",
+      tags: ["Holiday"]
+    },
+    {
+      date: "May 2025",
+      title: "Open Day Recap",
+      description: "Highlights from our April Open Day: 250 attendees and incredible support from the community.",
+      image: "/images/newsletters/mau-newsletter-2025-05-open-day-recap.jpg",
+      tags: ["Event Recap"]
+    },
+    {
+      date: "April 2025",
+      title: "Open Day Invitation",
+      description: "Come and explore the space before transformation begins. Join us at 68 Langley Road.",
+      image: "/images/newsletters/mau-newsletter-2025-04-open-day-invite.jpg",
+      tags: ["Event"]
+    },
+    {
+      date: "April 2025",
+      title: "Flash Update 01",
+      description: "Masjid and Musallah collections update. \xA339k collected thanks to the generosity of the Ummah.",
+      image: "/images/newsletters/mau-newsletter-2025-04-flash-update-01.jpg",
+      tags: ["Fundraising"]
+    },
+    {
+      date: "April 2025",
+      title: "Issue 02: Inside View",
+      description: "Eid Mubarak messages and community views from our trustees.",
+      image: "/images/newsletters/mau-newsletter-2025-04-issue-02.jpg",
+      tags: ["Newsletter"]
+    },
+    {
+      date: "March 2025",
+      title: "Issue 01: Welcome",
+      description: "Our first newsletter. Sharing our vision during the blessed month of Ramadan.",
+      image: "/images/newsletters/mau-newsletter-2025-03-issue-01.jpg",
+      tags: ["Newsletter", "Launch"]
     }
   ];
-  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Updates" }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<div class="bg-secondary py-20"> <div class="container mx-auto px-4 text-center"> <h1 class="text-4xl font-bold text-dark mb-6">News & Updates</h1> <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-Stay up to date with the latest announcements, events, and project progress.
-</p> </div> </div>  <section class="py-16 bg-white"> <div class="container mx-auto px-4"> <div class="max-w-4xl mx-auto"> <div class="flex items-center justify-between mb-8"> <div> <h2 class="text-2xl font-bold text-dark">Newsletters</h2> <p class="text-gray-600 mt-1">Download our monthly community newsletters</p> </div> <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path> </svg> </div> <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"> ${newsletters.map((newsletter) => renderTemplate`<a${addAttribute(newsletter.pdfUrl, "href")} target="_blank" rel="noopener" class="group block bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1"> <div${addAttribute(`h-32 bg-gradient-to-br ${newsletter.coverColor} flex items-center justify-center`, "class")}> <div class="text-center text-white"> <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto mb-2 opacity-90" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path> </svg> <span class="text-sm font-semibold uppercase tracking-wider opacity-90">PDF</span> </div> </div> <div class="p-5"> <span class="text-xs text-primary font-semibold uppercase tracking-wide">${newsletter.date}</span> <h3 class="font-bold text-dark mt-1 group-hover:text-primary transition-colors">${newsletter.title}</h3> <p class="text-sm text-gray-600 mt-2 line-clamp-2">${newsletter.description}</p> <div class="flex items-center gap-2 mt-4 text-primary text-sm font-semibold"> <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path> </svg>
-Download PDF
-</div> </div> </a>`)} <!-- Coming Soon Card --> <div class="block bg-gray-50 rounded-xl border-2 border-dashed border-gray-200 overflow-hidden"> <div class="h-32 bg-gray-100 flex items-center justify-center"> <div class="text-center text-gray-400"> <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path> </svg> </div> </div> <div class="p-5"> <span class="text-xs text-gray-400 font-semibold uppercase tracking-wide">Coming Soon</span> <h3 class="font-bold text-gray-400 mt-1">More Newsletters</h3> <p class="text-sm text-gray-400 mt-2">Subscribe to receive updates when new newsletters are published.</p> </div> </div> </div> </div> </div> </section>  <section class="py-16 bg-gradient-to-br from-dark to-gray-900"> <div class="container mx-auto px-4"> <div class="max-w-4xl mx-auto"> <div class="text-center mb-10"> <h2 class="text-2xl font-bold text-white mb-3">Watch Our Story</h2> <p class="text-gray-300">See the vision of Masjid Al Ummah come to life</p> </div> <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-black"> <video id="main-video" class="w-full aspect-video" controls preload="metadata" poster="/images/renderings/mau-rendering-hero.jpg"> <source src="/images/mau-collections-newsletter-video.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video> <!-- Custom Play Button Overlay --> <div id="video-overlay" class="absolute inset-0 flex items-center justify-center bg-black/40 cursor-pointer transition-opacity hover:bg-black/30"> <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center shadow-lg transform transition-transform hover:scale-110"> <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white ml-1" viewBox="0 0 20 20" fill="currentColor"> <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path> </svg> </div> </div> </div> <div class="mt-6 text-center"> <p class="text-gray-400 text-sm">Community Newsletter Video - March 2025</p> </div> </div> </div> </section> ${renderScript($$result2, "C:/Users/kashi/Documents/mau-fe/src/pages/updates.astro?astro&type=script&index=0&lang.ts")}  <section class="py-16 bg-secondary"> <div class="container mx-auto px-4"> <div class="max-w-4xl mx-auto"> <h2 class="text-2xl font-bold text-dark mb-8">Latest Updates</h2> <div class="space-y-6"> ${updates.map((update) => renderTemplate`<article class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow flex flex-col md:flex-row"> ${update.image ? renderTemplate`<div class="md:w-1/3 h-48 md:h-auto relative"> <img${addAttribute(update.image, "src")}${addAttribute(update.title, "alt")} class="w-full h-full object-cover"> <div${addAttribute(`absolute top-4 left-4 ${update.categoryColor} text-white text-xs font-bold px-3 py-1 rounded-full`, "class")}> ${update.category} </div> </div>` : renderTemplate`<div class="md:w-1/3 h-48 md:h-auto bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center relative"> <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary/40" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path> </svg> <div${addAttribute(`absolute top-4 left-4 ${update.categoryColor} text-white text-xs font-bold px-3 py-1 rounded-full`, "class")}> ${update.category} </div> </div>`} <div class="p-8 md:w-2/3"> <span class="text-sm text-gray-500 block mb-2">${update.date}</span> <h3 class="text-xl font-bold text-dark mb-3">${update.title}</h3> <p class="text-gray-600">${update.description}</p> </div> </article>`)} </div> </div> </div> </section>  <section class="py-16 bg-dark text-white"> <div class="container mx-auto px-4 text-center max-w-2xl"> <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path> </svg> <h2 class="text-2xl font-bold mb-4">Stay Connected</h2> <p class="text-gray-300 mb-8">
-Follow us on social media or reach out to join our mailing list for the latest news and updates about Masjid Al Ummah.
-</p> <div class="flex flex-col sm:flex-row gap-4 justify-center"> <a href="/contact" class="px-6 py-3 bg-primary text-white font-bold rounded-lg hover:bg-accent transition-colors">
-Contact Us
-</a> <a href="mailto:info@masjidalummah.org" class="px-6 py-3 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-colors">
-Email Us
-</a> </div> </div> </section> ` })}`;
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Updates", "description": "Follow the journey of Masjid Al Ummah. Newsletters, planning updates, and community events." }, { "default": ($$result2) => renderTemplate(_a || (_a = __template([" ", '<div class="bg-dark text-white py-20"> <div class="container mx-auto px-4 text-center"> <h1 class="text-5xl font-bold mb-6 text-white">Project Updates</h1> <p class="text-xl text-gray-300 max-w-2xl mx-auto">\nFollow our journey as we build Masjid Al Ummah. From planning milestones to community gatherings.\n</p> </div> </div> <section class="py-16 bg-gray-50"> <div class="container mx-auto px-4"> <div class="max-w-5xl mx-auto"> <div class="relative border-l-2 border-primary/30 ml-3 md:ml-0 space-y-12 md:space-y-0"> ', ` </div> </div> </div> </section>  <div id="lightbox" class="fixed inset-0 bg-black/95 z-[60] hidden items-center justify-center p-4 opacity-0 transition-opacity duration-300" onclick="closeLightbox()"> <button class="absolute top-4 right-4 text-white/80 hover:text-white text-4xl focus:outline-none z-50 p-2" onclick="closeLightbox()">&times;</button> <div class="relative max-w-5xl max-h-screen w-full h-full flex items-center justify-center"> <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[90vh] object-contain rounded-sm shadow-2xl transform scale-95 transition-transform duration-300" onclick="event.stopPropagation()"> </div> </div> <script>
+    function openLightbox(src, alt) {
+      const lightbox = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+
+      img.src = src;
+      img.alt = alt;
+
+      lightbox.classList.remove('hidden');
+      // Small delay to allow display:block to apply before changing opacity for fade effect
+      setTimeout(() => {
+        lightbox.classList.remove('opacity-0');
+        img.classList.remove('scale-95');
+        img.classList.add('scale-100');
+      }, 10);
+
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+
+      lightbox.classList.add('opacity-0');
+      img.classList.remove('scale-100');
+      img.classList.add('scale-95');
+
+      setTimeout(() => {
+        lightbox.classList.add('hidden');
+        document.body.style.overflow = '';
+      }, 300);
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  <\/script> `])), maybeRenderHead(), updates.map((update, index) => renderTemplate`<div${addAttribute(`relative flex flex-col md:flex-row gap-8 mb-12 last:mb-0 ${index % 2 === 0 ? "" : "md:flex-row-reverse"}`, "class")}> <!-- Timeline Dot --> <div class="absolute left-[-5px] md:left-1/2 md:transform md:-translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-white shadow-sm mt-6"></div> <!-- Content Card --> <div${addAttribute(`ml-8 md:ml-0 md:w-1/2 ${index % 2 === 0 ? "md:pr-12" : "md:pl-12"}`, "class")}> <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer"${addAttribute(`openLightbox('${update.image}', '${update.title}')`, "onclick")}> <div class="h-48 overflow-hidden relative"> <div class="absolute top-4 left-4 z-10"> <span class="bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide"> ${update.date} </span> </div> <img${addAttribute(update.image, "src")}${addAttribute(update.title, "alt")} class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"> <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100"> <span class="bg-white/90 text-dark px-4 py-2 rounded-full text-sm font-bold shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-all">View Update</span> </div> </div> <div class="p-6"> <div class="flex gap-2 mb-3"> ${update.tags.map((tag) => renderTemplate`<span class="text-xs font-semibold text-primary/80 bg-primary/5 px-2 py-1 rounded">${tag}</span>`)} </div> <h3 class="text-xl font-bold text-dark mb-2 group-hover:text-primary transition-colors">${update.title}</h3> <p class="text-gray-600 text-sm leading-relaxed"> ${update.description} </p> </div> </div> </div> <!-- Empty space for the other side of the timeline on desktop --> <div class="hidden md:block md:w-1/2"></div> </div>`)) })}`;
 }, "C:/Users/kashi/Documents/mau-fe/src/pages/updates.astro", void 0);
 
 const $$file = "C:/Users/kashi/Documents/mau-fe/src/pages/updates.astro";
