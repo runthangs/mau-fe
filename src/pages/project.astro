@@ -1,19 +1,104 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-// Manual list based on available files
-const renderings = [
-  { src: '/images/renderings/mau-rendering-hero.jpg', alt: 'Future Vision: Exterior' },
-  { src: '/images/01-mau-interior-foyer-cafe-v2.png', alt: 'Community Café & Foyer' },
-  { src: '/images/03-mau-interior-prayer-hall-v2.png', alt: 'Main Prayer Hall' },
-  { src: '/images/04-mau-interior-sports-hall.png', alt: 'Sports Hall' },
-  { src: '/images/05-mau-interior-gym.png', alt: 'Fitness Suite' },
-  { src: '/images/08-mau-interior-womens-prayer-v2.png', alt: "Women's Prayer Space" },
-  { src: '/images/07-mau-interior-classroom.png', alt: 'Education & Classroom' },
-  { src: '/images/09-mau-interior-kitchen-food-bank.png', alt: 'Community Kitchen' },
-  { src: '/images/02-mau-interior-corridor-nursery-v2.png', alt: 'Corridor & Nursery' },
-  { src: '/images/06-mau-interior-wudu.png', alt: 'Wudu Facilities' },
-  { src: '/images/mau-wide-elevations-plans.jpg', alt: 'Architectural Masterplan' },
+// Facilities & Services with images and descriptions
+const facilities = [
+  {
+    src: '/images/renderings/mau-rendering-hero.jpg',
+    title: 'Future Vision: Exterior',
+    description: 'The architectural design blends modern British aesthetics with subtle Islamic geometry.',
+    category: 'architecture'
+  },
+  {
+    src: '/images/03-mau-interior-prayer-hall-v2.png',
+    title: "Daily Prayers & Jumu'ah",
+    description: 'Five daily congregational prayers and Friday Jumu'ah service in a peaceful, clean environment for men and women.',
+    category: 'worship'
+  },
+  {
+    src: '/images/08-mau-interior-womens-prayer-v2.png',
+    title: "Women's Prayer Space",
+    description: 'A dedicated, comfortable prayer area designed specifically for sisters.',
+    category: 'worship'
+  },
+  {
+    src: '/images/07-mau-interior-classroom.png',
+    title: 'Quran & Islamic Education',
+    description: 'Supporting future hafiz and lifelong learning through our Madrasah, Quran memorisation programs, and adult classes.',
+    category: 'education'
+  },
+  {
+    src: '/images/12-mau-interior-youth-zone.png',
+    title: 'Youth Spaces',
+    description: 'Gaming rooms, mentoring programmes, and fun, safe activities designed to give young people a place to hang out and grow.',
+    category: 'youth'
+  },
+  {
+    src: '/images/05-mau-interior-gym.png',
+    title: 'Health & Fitness',
+    description: 'A private, fully equipped gym promoting healthy living and physical wellbeing for the whole community.',
+    category: 'facilities'
+  },
+  {
+    src: '/images/04-mau-interior-sports-hall.png',
+    title: 'Sports Hall',
+    description: 'Encouraging healthy living for all with a multi-purpose sports facility for basketball, badminton, and community activities.',
+    category: 'facilities'
+  },
+  {
+    src: '/images/02-mau-interior-corridor-nursery-v2.png',
+    title: 'Nursery',
+    description: 'A caring early-learning space for young children, nurturing their development in a safe Islamic environment.',
+    category: 'education'
+  },
+  {
+    src: '/images/11-mau-interior-library.png',
+    title: 'Library',
+    description: 'Quiet, useful spaces for students and readers with modern technology and resources for learning.',
+    category: 'education'
+  },
+  {
+    src: '/images/14-mau-interior-elderly-lounge.png',
+    title: 'Elderly Social Areas',
+    description: 'Warm, welcoming places for our elders to connect, relax, and participate in community life.',
+    category: 'community'
+  },
+  {
+    src: '/images/10-mau-interior-peace-garden.png',
+    title: 'The Peace Garden',
+    description: 'A calm refuge for moments of reflection, gratitude, and peace amidst the busy world.',
+    category: 'facilities'
+  },
+  {
+    src: '/images/09-mau-interior-kitchen-food-bank.png',
+    title: 'Soup Kitchen',
+    description: 'Helping the homeless and anyone struggling in Watford with essential food supplies and support.',
+    category: 'community'
+  },
+  {
+    src: '/images/01-mau-interior-foyer-cafe-v2.png',
+    title: 'Community Café & Foyer',
+    description: 'A welcoming entrance and gathering space for the community.',
+    category: 'facilities'
+  },
+  {
+    src: '/images/13-mau-interior-marriage-office.png',
+    title: 'Marriage Services',
+    description: 'Nikah ceremonies and pre-marital counseling to support couples in building strong, faith-centered families.',
+    category: 'community'
+  },
+  {
+    src: '/images/06-mau-interior-wudu.png',
+    title: 'Wudu Facilities',
+    description: 'Clean, accessible ablution areas designed for comfort and convenience.',
+    category: 'worship'
+  },
+  {
+    src: '/images/mau-wide-elevations-plans.jpg',
+    title: 'Architectural Masterplan',
+    description: 'The complete architectural vision for the new Masjid Al Ummah complex.',
+    category: 'architecture'
+  },
 ];
 
 const team = [
@@ -139,21 +224,30 @@ const team = [
       </div>
 
       <!-- Gallery Grid -->
-      <h2 class="text-3xl font-bold text-dark mb-10 text-center">Project Renderings</h2>
+      <h2 class="text-3xl font-bold text-dark mb-4 text-center">Planned Facilities & Services</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto text-center mb-10">Everything the new Masjid Al Ummah will offer to serve our growing community.</p>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {renderings.map((img) => (
+        {facilities.map((item) => (
           <div
-            class="group relative overflow-hidden rounded-xl shadow-lg aspect-[4/3] cursor-pointer"
-            onclick={`openLightbox('${img.src}', '${img.alt}')`}
+            class="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer"
+            onclick={`openLightbox('${item.src}', '${item.title}')`}
           >
-            <img
-              src={img.src}
-              alt={img.alt}
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-              <span class="text-white font-medium text-lg">{img.alt}</span>
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-auto text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div class="aspect-[4/3]">
+              <img
+                src={item.src}
+                alt={item.title}
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6">
+              <span class="inline-block px-3 py-1 bg-primary/90 text-white text-xs font-semibold rounded-full capitalize w-fit mb-2">
+                {item.category}
+              </span>
+              <h3 class="text-white font-bold text-lg mb-1">{item.title}</h3>
+              <p class="text-gray-200 text-sm line-clamp-2">{item.description}</p>
+            </div>
+            <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
               </svg>
             </div>
@@ -226,6 +320,40 @@ const team = [
           <source src="/images/mau-overview-video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instagram Feed Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold text-dark mb-4">Follow Us on Instagram</h2>
+        <p class="text-gray-600">Stay connected with our community updates and events</p>
+        <a href="https://www.instagram.com/masjid_al_ummah" target="_blank" class="inline-flex items-center gap-2 text-primary font-semibold mt-4 hover:text-accent transition-colors">
+          @masjid_al_ummah
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Behold Instagram Widget - Embedded Feed -->
+      <div class="max-w-5xl mx-auto">
+        <div id="instagram-feed" class="min-h-[400px]">
+          <!-- Behold.so embed code - replace FEED_ID with actual ID after setup -->
+          <script src="https://w.behold.so/widget.js" type="module"></script>
+          <behold-widget feed-id="masjid_al_ummah"></behold-widget>
+        </div>
+
+        <!-- Fallback if widget doesn't load -->
+        <noscript>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <a href="https://www.instagram.com/masjid_al_ummah" target="_blank" class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center">
+              <span class="text-gray-500">View on Instagram</span>
+            </a>
+          </div>
+        </noscript>
       </div>
     </div>
   </section>
