@@ -1,0 +1,145 @@
+---
+---
+
+<div class="bg-white p-6 sm:p-8 rounded-xl border border-gray-100 shadow-sm max-w-md mx-auto w-full">
+  <h3 class="text-2xl font-bold text-dark mb-6 text-center">Make a Donation</h3>
+  
+  <form id="donation-form" class="space-y-6">
+    <div>
+      <label class="block text-sm font-medium text-gray-700 mb-3">Select Amount</label>
+      <div class="grid grid-cols-3 gap-3">
+        <button type="button" class="amount-btn px-2 sm:px-4 py-2 border rounded-lg hover:bg-primary/5 hover:border-primary hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 text-sm sm:text-base font-medium text-gray-700 border-gray-200" data-amount="10">£10</button>
+        <button type="button" class="amount-btn px-2 sm:px-4 py-2 border rounded-lg hover:bg-primary/5 hover:border-primary hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 text-sm sm:text-base font-medium text-gray-700 border-gray-200" data-amount="20">£20</button>
+        <button type="button" class="amount-btn px-2 sm:px-4 py-2 border rounded-lg hover:bg-primary/5 hover:border-primary hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 text-sm sm:text-base font-medium text-gray-700 border-gray-200" data-amount="50">£50</button>
+        <button type="button" class="amount-btn px-2 sm:px-4 py-2 border rounded-lg hover:bg-primary/5 hover:border-primary hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 text-sm sm:text-base font-medium text-gray-700 border-gray-200" data-amount="100">£100</button>
+        <div class="col-span-2 relative">
+            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">£</span>
+            <input type="number" id="custom-amount" placeholder="Other" class="w-full pl-7 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary outline-none transition-colors" min="1" step="1">
+        </div>
+      </div>
+      <input type="hidden" id="selected-amount" name="amount" value="">
+    </div>
+
+    <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
+      <div class="flex items-start">
+        <div class="flex items-center h-5">
+          <input id="gift-aid" name="giftAid" type="checkbox" class="focus:ring-primary h-4 w-4 text-primary border-gray-300 rounded">
+        </div>
+        <div class="ml-3 text-sm">
+          <label for="gift-aid" class="font-medium text-gray-700">Gift Aid it!</label>
+          <p class="text-gray-500 text-xs mt-1 leading-snug">
+            I am a UK taxpayer and understand that if I pay less Income Tax and/or Capital Gains Tax than the amount of Gift Aid claimed on all my donations in that tax year it is my responsibility to pay any difference.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" id="submit-btn" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all disabled:opacity-70 disabled:cursor-not-allowed transform hover:-translate-y-0.5">
+      Donate Securely
+    </button>
+    <div id="error-message" class="text-red-500 text-sm text-center hidden bg-red-50 p-2 rounded"></div>
+  </form>
+  
+  <div class="mt-4 text-center">
+      <p class="text-xs text-gray-400 flex items-center justify-center gap-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3"><rect x="2" y="5" width="20" height="14" rx="2" /><line x1="2" y1="10" x2="22" y2="10" /></svg>
+        Secured by Stripe
+      </p>
+  </div>
+</div>
+
+<script>
+  const form = document.getElementById('donation-form');
+  const amountBtns = document.querySelectorAll('.amount-btn');
+  const customInput = document.getElementById('custom-amount');
+  const selectedInput = document.getElementById('selected-amount');
+  const submitBtn = document.getElementById('submit-btn');
+  const errorMsg = document.getElementById('error-message');
+
+  let currentAmount = null;
+
+  function setAmount(value, btnElement = null) {
+    currentAmount = value;
+    selectedInput.value = value;
+    
+    // Reset buttons
+    amountBtns.forEach(btn => {
+      btn.classList.remove('bg-primary', 'text-white', 'border-primary');
+      btn.classList.add('border-gray-200', 'text-gray-700');
+    });
+
+    // Highlight selected button if any
+    if (btnElement) {
+      btnElement.classList.remove('border-gray-200', 'text-gray-700');
+      btnElement.classList.add('bg-primary', 'text-white', 'border-primary');
+      customInput.value = ''; // Clear custom input
+    }
+  }
+
+  amountBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      setAmount(btn.dataset.amount, btn);
+    });
+  });
+
+  customInput.addEventListener('input', (e) => {
+    const val = e.target.value;
+    if (val) {
+      setAmount(val); // Don't highlight any button
+    } else {
+        currentAmount = null;
+        selectedInput.value = '';
+    }
+    
+    // If user types in custom amount, deselect buttons visually
+    amountBtns.forEach(btn => {
+      btn.classList.remove('bg-primary', 'text-white', 'border-primary');
+      btn.classList.add('border-gray-200', 'text-gray-700');
+    });
+  });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    errorMsg.classList.add('hidden');
+    
+    if (!currentAmount || currentAmount < 1) {
+      errorMsg.textContent = 'Please select a valid donation amount (minimum £1)';
+      errorMsg.classList.remove('hidden');
+      return;
+    }
+
+    const isGiftAid = document.getElementById('gift-aid').checked;
+    
+    submitBtn.disabled = true;
+    const originalBtnText = submitBtn.textContent;
+    submitBtn.innerHTML = '<svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Processing...';
+
+    try {
+      const response = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          amount: Math.round(parseFloat(currentAmount) * 100), // Convert to pence
+          giftAid: isGiftAid,
+          origin: window.location.origin
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.url) {
+        window.location.href = data.url;
+      } else {
+        throw new Error(data.error || 'Payment initiation failed');
+      }
+    } catch (err) {
+      console.error(err);
+      errorMsg.textContent = 'Something went wrong. Please try again.';
+      errorMsg.classList.remove('hidden');
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalBtnText;
+    }
+  });
+</script>
