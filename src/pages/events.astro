@@ -4,37 +4,37 @@ import Layout from '../layouts/Layout.astro';
 const pastEvents = [
   {
     title: "Community Open Day",
-    date: "2024-10-20",
+    date: "2025-10-20",
     time: "10:00 - 16:00",
     location: "Masjid Al Ummah Site",
-    image: "/images/mau-front.jpg",
+    image: "/images/mau-frontage-right.png",
     description: "An open day for the community to view the new masjid site, architectural plans, and meet the project team. Refreshments were served.",
     category: "Open Day"
   },
   {
     title: "Fundraising Dinner",
-    date: "2024-09-14",
+    date: "2025-09-14",
     time: "18:00 - 22:00",
     location: "Watford Community Centre",
-    image: "/images/renderings/mau-rendering-cam-03.jpg",
+    image: "/images/15-mau-interior-event-hall.png",
     description: "An evening of food and fellowship to raise funds for the new masjid. Over 200 community members attended this successful fundraising event.",
     category: "Fundraising"
   },
   {
     title: "Spring Open Day",
-    date: "2024-04-07",
+    date: "2025-04-07",
     time: "11:00 - 15:00",
     location: "Masjid Al Ummah Site",
-    image: "/images/mau-inside.jpg",
+    image: "/images/01-mau-interior-foyer-cafe-v2.png",
     description: "Community members visited the site to see progress updates and discuss the vision for the new facility with trustees.",
     category: "Open Day"
   },
   {
     title: "Community Iftar & Fundraiser",
-    date: "2024-03-23",
+    date: "2025-03-23",
     time: "17:30 - 21:00",
     location: "Current Masjid",
-    image: "/images/renderings/mau-rendering-cam-04.jpg",
+    image: "/images/03-mau-interior-prayer-hall-v2.png",
     description: "A blessed gathering during Ramadan where the community came together for iftar and pledged support for the new masjid project.",
     category: "Fundraising"
   }
@@ -65,20 +65,25 @@ function formatDate(dateString) {
               <img
                 src={event.image}
                 alt={event.title}
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale group-hover:grayscale-0"
               />
-              <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary uppercase tracking-wide">
-                {event.category}
+              <div class="absolute top-4 right-4 flex flex-col gap-2 items-end">
+                 <div class="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary uppercase tracking-wide shadow-sm">
+                  {event.category}
+                </div>
+                <div class="bg-gray-800/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-white uppercase tracking-wide shadow-sm">
+                  Past Event
+                </div>
               </div>
             </div>
 
             <div class="p-6">
               <div class="flex items-center text-sm text-gray-500 mb-3 space-x-4">
-                <span class="flex items-center">
+                <span class="flex items-center font-medium text-primary">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
-                  {new Date(event.date).toLocaleDateString('en-GB', { month: 'short', day: 'numeric' })}
+                  {new Date(event.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
                 </span>
                 <span class="flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">

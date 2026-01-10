@@ -3,54 +3,79 @@ import Layout from '../layouts/Layout.astro';
 
 const images = [
   {
-    src: "/images/renderings/mau-rendering-hero.jpg",
-    alt: "Masjid Al Ummah Hero Rendering",
-    title: "Main Entrance View"
-  },
-  {
-    src: "/images/mau-interior-foyer-cafe.png",
+    src: "/images/01-mau-interior-foyer-cafe-v2.png",
     alt: "Masjid Al Ummah Foyer and Café",
-    title: "Community Café & Foyer"
+    title: "Foyer & Cafe"
   },
   {
-    src: "/images/mau-interior-prayer-hall.png",
-    alt: "Masjid Al Ummah Prayer Hall",
-    title: "Main Prayer Hall"
-  },
-  {
-    src: "/images/mau-interior-sports-hall.png",
-    alt: "Masjid Al Ummah Sports Hall",
-    title: "Sports Hall"
-  },
-  {
-    src: "/images/mau-interior-gym.png",
-    alt: "Masjid Al Ummah Fitness Suite",
-    title: "Fitness Suite"
-  },
-  {
-    src: "/images/mau-interior-womens-prayer.png",
-    alt: "Masjid Al Ummah Women's Prayer Space",
-    title: "Women's Prayer Space"
-  },
-  {
-    src: "/images/mau-interior-classroom.png",
-    alt: "Masjid Al Ummah Classroom",
-    title: "Education & Classroom"
-  },
-  {
-    src: "/images/mau-interior-kitchen.png",
-    alt: "Masjid Al Ummah Community Kitchen",
-    title: "Community Kitchen"
-  },
-  {
-    src: "/images/mau-interior-corridor-nursery.png",
+    src: "/images/02-mau-interior-corridor-nursery-v2.png",
     alt: "Masjid Al Ummah Corridor and Nursery",
     title: "Corridor & Nursery"
   },
   {
-    src: "/images/mau-interior-wudu.png",
+    src: "/images/03-mau-interior-prayer-hall-v2.png",
+    alt: "Masjid Al Ummah Main Prayer Hall",
+    title: "Main Prayer Hall"
+  },
+  {
+    src: "/images/04-mau-interior-sports-hall.png",
+    alt: "Masjid Al Ummah Sports Hall",
+    title: "Sports Hall"
+  },
+  {
+    src: "/images/05-mau-interior-gym.png",
+    alt: "Masjid Al Ummah Fitness Suite",
+    title: "Gym / Fitness Suite"
+  },
+  {
+    src: "/images/06-mau-interior-wudu.png",
     alt: "Masjid Al Ummah Wudu Facilities",
-    title: "Wudu Ablution Area"
+    title: "Wudu Area"
+  },
+  {
+    src: "/images/07-mau-interior-classroom.png",
+    alt: "Masjid Al Ummah Classroom",
+    title: "Classroom"
+  },
+  {
+    src: "/images/08-mau-interior-womens-prayer-v2.png",
+    alt: "Masjid Al Ummah Women's Prayer Space",
+    title: "Women's Prayer Space"
+  },
+  {
+    src: "/images/09-mau-interior-kitchen-food-bank.png",
+    alt: "Masjid Al Ummah Community Kitchen",
+    title: "Kitchen & Food Bank"
+  },
+  {
+    src: "/images/10-mau-interior-peace-garden.png",
+    alt: "Masjid Al Ummah Peace Garden",
+    title: "Peace Garden"
+  },
+  {
+    src: "/images/11-mau-interior-library.png",
+    alt: "Masjid Al Ummah Library",
+    title: "Library"
+  },
+  {
+    src: "/images/12-mau-interior-youth-zone.png",
+    alt: "Masjid Al Ummah Youth Zone",
+    title: "Youth Zone"
+  },
+  {
+    src: "/images/13-mau-interior-marriage-office.png",
+    alt: "Masjid Al Ummah Marriage Office",
+    title: "Marriage Office"
+  },
+  {
+    src: "/images/14-mau-interior-elderly-lounge.png",
+    alt: "Masjid Al Ummah Elderly Lounge",
+    title: "Elderly Lounge"
+  },
+  {
+    src: "/images/15-mau-interior-event-hall.png",
+    alt: "Masjid Al Ummah Event Hall",
+    title: "Event Hall"
   }
 ];
 ---
@@ -69,25 +94,24 @@ const images = [
   <!-- Gallery Grid -->
   <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {images.map((image, index) => (
           <div
-            class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg bg-secondary aspect-video cursor-pointer"
+            class="gallery-item group rounded-2xl shadow-md bg-white overflow-hidden cursor-pointer hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col h-full"
             data-index={index}
             data-src={image.src}
             data-title={image.title}
           >
-            <img
-              src={image.src}
-              alt={image.alt}
-              loading="lazy"
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-              <div class="text-white">
-                <h3 class="text-xl font-bold">{image.title}</h3>
-                <p class="text-sm text-gray-200">Click to enlarge</p>
-              </div>
+            <div class="aspect-video w-full overflow-hidden">
+              <img
+                src={image.src}
+                alt={image.alt}
+                loading="lazy"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+            <div class="p-6 flex-grow flex flex-col justify-center text-center">
+              <h3 class="text-xl font-bold text-dark">{image.title}</h3>
             </div>
           </div>
         ))}
@@ -96,25 +120,25 @@ const images = [
   </section>
 
   <!-- Lightbox -->
-  <div id="lightbox" class="fixed inset-0 bg-black/90 z-[100] hidden items-center justify-center">
-    <button id="lightbox-close" class="absolute top-4 right-4 text-white hover:text-primary transition-colors z-10">
+  <div id="lightbox" class="fixed inset-0 bg-black/95 z-[100] hidden items-center justify-center backdrop-blur-sm">
+    <button id="lightbox-close" class="absolute top-4 right-4 text-white hover:text-primary transition-colors z-10 p-2">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </button>
-    <button id="lightbox-prev" class="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-primary transition-colors">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <button id="lightbox-prev" class="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-primary transition-colors p-2 bg-black/20 rounded-full hover:bg-black/40">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
       </svg>
     </button>
-    <button id="lightbox-next" class="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-primary transition-colors">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <button id="lightbox-next" class="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-primary transition-colors p-2 bg-black/20 rounded-full hover:bg-black/40">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
       </svg>
     </button>
-    <div class="max-w-6xl max-h-[90vh] px-16">
-      <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[80vh] object-contain mx-auto" />
-      <p id="lightbox-title" class="text-white text-center mt-4 text-lg font-semibold"></p>
+    <div class="max-w-7xl max-h-[90vh] px-4 md:px-16 flex flex-col items-center">
+      <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[80vh] object-contain mx-auto rounded-lg shadow-2xl" />
+      <p id="lightbox-title" class="text-white text-center mt-6 text-xl font-semibold tracking-wide"></p>
     </div>
   </div>
 
